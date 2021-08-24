@@ -6,13 +6,17 @@ using namespace std;
 bool arr[1000001];
 
 void snt(int n){
-    for (int i = 2; i <= n; i++)
-        arr[i] = 1;
-    arr[0] = arr[1] = 0;
-    for (int i = 2; i <= sqrt(n); i++)
-    if (arr[i])
-        for (int j = 2 * i; j <= n; j += i)
-            arr[j] = 0;
+	for (int i = 2; i <= n; ++i) {
+		arr[i] = 1;
+	}
+	arr[0] = arr[1] = 0;
+	for(int i = 2; i <= sqrt(n); ++i) {
+		if(arr[i]) {
+			for (int j = i*2; j <= n; j+=i) {
+				arr[j] = 0;
+			}
+		}
+	}
 }
 
 int greatestCommonPrimeDivisor(int a, int b)
@@ -27,7 +31,7 @@ int greatestCommonPrimeDivisor(int a, int b)
 
 
 int main(){
-	cout << greatestCommonPrimeDivisor(12,20);
+	cout << greatestCommonPrimeDivisor(15,20);
 
 	cout << endl;
 	return 0;

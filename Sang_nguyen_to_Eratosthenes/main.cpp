@@ -37,6 +37,8 @@ int main(){
 	
     cout << isPrime(17);
 
+    cout << "hello";
+
 	cout << endl;
 	return 0;
 }
